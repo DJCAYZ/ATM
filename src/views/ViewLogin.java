@@ -38,6 +38,11 @@ public class ViewLogin extends View {
         
         incorrectLoginAttempts = 0;
         data.setActiveAccount(account);
-        data.setActiveView(ViewType.ACCOUNT_MENU);
+
+        if (account.getIsAdmin()) {
+            data.setActiveView(ViewType.ADMIN_MENU);
+        } else {
+            data.setActiveView(ViewType.ACCOUNT_MENU);
+        }
     }
 }
