@@ -42,6 +42,8 @@ public class ViewAdminMenu extends View {
                 data.setActiveView(ViewType.ADMIN_EDIT_USER_INFO);
                 break;
             case 'P':
+                data.setActiveView(ViewType.ADMIN_EDIT_USER_PIN);
+                break;
             case 'C':
                 data.setActiveAccount(null);
                 data.setActiveView(ViewType.START_MENU);

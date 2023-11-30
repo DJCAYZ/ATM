@@ -70,6 +70,7 @@ public class ViewAdminEditUserInfo extends View {
         }
 
         System.out.println(centerText("Editing " + accountToEdit.getAccountName() + "'s account."));
+        System.out.println();
         System.out.println(centerText("What information will be edited?"));
         System.out.println(centerText("A -> Account Number", -1));
         System.out.println(centerText("N -> Account Name", -2));
@@ -193,7 +194,7 @@ public class ViewAdminEditUserInfo extends View {
                         isInvalidInput = true;
                         return;
                     }
-                    
+
                     accountToEdit.setBalance(newBalance);
                 } catch (NumberFormatException e) {
                     isInvalidInput = true;

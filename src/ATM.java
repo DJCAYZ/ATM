@@ -10,6 +10,7 @@ import views.ViewAccountMenu;
 import views.ViewAccountWithdrawal;
 import views.ViewAdminAddUser;
 import views.ViewAdminEditUserInfo;
+import views.ViewAdminEditUserPIN;
 import views.ViewAdminMenu;
 import views.ViewData;
 import views.ViewExiting;
@@ -61,7 +62,7 @@ public class ATM {
         views.put(ViewType.ADMIN_MENU, new ViewAdminMenu(input));
         views.put(ViewType.ADMIN_ADD_USER, new ViewAdminAddUser(input));
         views.put(ViewType.ADMIN_EDIT_USER_INFO, new ViewAdminEditUserInfo(input));
-        views.put(ViewType.ADMIN_EDIT_USER_PIN, null);
+        views.put(ViewType.ADMIN_EDIT_USER_PIN, new ViewAdminEditUserPIN(input));
 
         views.put(ViewType.EXITING, new ViewExiting(input));
     }
