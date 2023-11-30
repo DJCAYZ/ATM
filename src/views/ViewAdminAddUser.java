@@ -25,6 +25,7 @@ public class ViewAdminAddUser extends View {
         }
 
         System.out.println(centerText("Enter the new account's number"));
+        System.out.println(centerText("Enter X to Go Back"));
         System.out.println(centerText("Format: ####-####-####"));
 
         if (newAccount.getAccountNumber() == null) {
@@ -33,6 +34,11 @@ public class ViewAdminAddUser extends View {
 
             if (newAccountNumber.length() == 0) {
                 isInvalidInput = true;
+                return;
+            } else if (newAccountNumber.toUpperCase().charAt(0) == 'X') {
+                isInvalidInput = false;
+                newAccount = new Account();
+                data.setActiveView(ViewType.ADMIN_MENU);
                 return;
             } else if (!Pattern.compile("\\d{4}-\\d{4}-\\d{4}").matcher(newAccountNumber).matches()) {
                 isInvalidInput = true;
@@ -54,6 +60,7 @@ public class ViewAdminAddUser extends View {
         }
 
         System.out.println(centerText("Enter the new account's name"));
+        System.out.println(centerText("Enter X to Go Back"));
 
         if (newAccount.getAccountName() == null) {
             System.out.print(centerText("", -10));
@@ -61,6 +68,10 @@ public class ViewAdminAddUser extends View {
 
             if (newAccountName.length() == 0) {
                 isInvalidInput = true;
+                return;
+            } else if (newAccountName.equalsIgnoreCase("X")) {
+                isInvalidInput = false;
+                newAccount.setAccountNumber(null);
                 return;
             }
 
@@ -85,6 +96,10 @@ public class ViewAdminAddUser extends View {
 
             if (strStartingBalance.length() == 0) {
                 isInvalidInput = true;
+                return;
+            } else if (strStartingBalance.toUpperCase().charAt(0) == 'X') {
+                isInvalidInput = false;
+                newAccount.setAccountName(null);
                 return;
             }
 
@@ -116,6 +131,10 @@ public class ViewAdminAddUser extends View {
 
             if (newAccountPIN.length() == 0) {
                 isInvalidInput = true;
+                return;
+            }  else if (newAccountPIN.toUpperCase().charAt(0) == 'X') {
+                isInvalidInput = false;
+                newAccount.setBalance(-1);
                 return;
             } else if (!Pattern.compile("\\d{4}").matcher(newAccountPIN).matches()) {
                 isInvalidInput = true;
