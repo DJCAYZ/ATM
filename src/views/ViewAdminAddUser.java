@@ -80,7 +80,7 @@ public class ViewAdminAddUser extends View {
 
         System.out.println(centerText("Enter the new account's starting balance"));
         if (newAccount.getBalance() < 0) {
-            System.out.print(centerText("", -10));
+            System.out.print(centerText("", -5));
             String strStartingBalance = input.readLine();
 
             if (strStartingBalance.length() == 0) {
