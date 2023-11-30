@@ -1,0 +1,19 @@
+package views;
+
+public enum ViewType {
+    START_MENU,
+    LOGIN,
+    LOGIN_FAILED,
+
+    ACCOUNT_MENU,
+    ACCOUNT_BALANCE,
+    ACCOUNT_WITHDRAWAL,
+    ACCOUNT_DEPOSIT,
+
+    ADMIN_MENU,
+    ADMIN_ADD_USER,
+    ADMIN_EDIT_USER_INFO,
+    ADMIN_EDIT_USER_PIN,
+    
+    EXITING
+}
