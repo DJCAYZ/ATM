@@ -8,6 +8,7 @@ import views.ViewAccountBalance;
 import views.ViewAccountDeposit;
 import views.ViewAccountMenu;
 import views.ViewAccountWithdrawal;
+import views.ViewAccountWithdrawalFailed;
 import views.ViewAdminAddUser;
 import views.ViewAdminEditUserInfo;
 import views.ViewAdminEditUserPIN;
@@ -57,6 +58,7 @@ public class ATM {
         views.put(ViewType.ACCOUNT_MENU, new ViewAccountMenu(input));
         views.put(ViewType.ACCOUNT_BALANCE, new ViewAccountBalance(input));
         views.put(ViewType.ACCOUNT_WITHDRAWAL, new ViewAccountWithdrawal(input));
+        views.put(ViewType.ACCOUNT_WITHDRAWAL_FAILED, new ViewAccountWithdrawalFailed(input));
         views.put(ViewType.ACCOUNT_DEPOSIT, new ViewAccountDeposit(input));
 
         views.put(ViewType.ADMIN_MENU, new ViewAdminMenu(input));

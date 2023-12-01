@@ -8,11 +8,13 @@ import account.AccountWithdrawalException;
 
 public class ViewAccountWithdrawal extends View {
     private boolean isInvalidInput;
+    private int invalidAttempts;
     private String reason;
     public ViewAccountWithdrawal(BufferedReader input) {
         super(input);
 
         isInvalidInput = false;
+        invalidAttempts = 0;
         reason = null;
     }
 
@@ -51,6 +53,11 @@ public class ViewAccountWithdrawal extends View {
         } catch (AccountWithdrawalException e) {
             isInvalidInput = true;
             reason = e.getMessage();
+            invalidAttempts++;
+
+            if (invalidAttempts == 3) {
+                data.setActiveView(ViewType.ACCOUNT_WITHDRAWAL_FAILED);
+            }
             return;
         }
 
